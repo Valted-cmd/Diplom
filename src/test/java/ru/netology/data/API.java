@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 
 
-public class APIHelper {
+public class API {
     private static final Gson gson = new Gson();
     private static Data.CardInfo cardInfo;
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()

@@ -7,7 +7,7 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.netology.data.APIHelper;
+import ru.netology.data.API;
 import ru.netology.data.Data;
 
 public class APITest {
@@ -25,24 +25,24 @@ public class APITest {
     @DisplayName("Запрос на покупку по карте со статусом APPROVED")
     @Test
     void shouldApprovePayment() {
-        APIHelper.payDebitCard((approvedCardInfo));
+        API.payDebitCard((approvedCardInfo));
     }
 
     @DisplayName("Запрос на кредит по карте со статусом APPROVED")
     @Test
     void shouldApproveCredit() {
-        APIHelper.payCreditCard(approvedCardInfo);
+        API.payCreditCard(approvedCardInfo);
     }
 
     @DisplayName("Запрос на покупку по карте со статусом DECLINED")
     @Test
     void shouldDeclinePayment() {
-        APIHelper.createPaymentError(declinedCardInfo);
+        API.createPaymentError(declinedCardInfo);
     }
 
     @DisplayName("Запрос на кредит по карте со статусом DECLINED")
     @Test
     void shouldDeclineCredit() {
-        APIHelper.createCreditError(declinedCardInfo);
+        API.createCreditError(declinedCardInfo);
     }
 }
