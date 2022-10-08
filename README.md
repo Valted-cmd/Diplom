@@ -30,3 +30,8 @@ ___
 11. Для остановки работы контейнеров выполнить команду  
     `docker-compose down`
 ___
+
+## Документация проекта:
+[1. Задание к диплому](https://github.com/Valted-cmd/Diplom/blob/main/files/description.md)  
+[2. План автоматизации](https://github.com/Valted-cmd/Diplom/blob/main/files/plan.md)  
+
