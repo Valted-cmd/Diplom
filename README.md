@@ -36,3 +36,4 @@ ___
 [2. План автоматизации](https://github.com/Valted-cmd/Diplom/blob/main/files/plan.md)  
 [3. Отчет по итогам тестирования](https://github.com/Valted-cmd/Diplom/blob/main/files/report.md)  
 [4. Отчет по итогам автоматизации](https://github.com/Valted-cmd/Diplom/blob/main/files/summary.md)
+[5. Отчет Allure](https://github.com/Valted-cmd/Diplom/blob/main/files/allure.jpg)
