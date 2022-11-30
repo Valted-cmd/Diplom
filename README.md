@@ -1,39 +1,60 @@
-#  Дипломный проект профессии "Тестировщик"
-___
-### Дипломный проект представляет собой комплексное автоматизированное тестирования веб-сервиса по покупке тура.
-___
+# Дипломный проект профессии «Тестировщик»
 
-## Запуск SUT, авто-тестов и генерация отчетов
+Дипломный проект представляет собой автоматизацию тестирования комплексного сервиса, взаимодействующего с СУБД и API Банка.
 
-1. Запустить Docker Desktop
-2. Открыть проект в IntelliJ IDEA
-3. Запустить в терминале IDEA контейнеры:  
-   `docker-compose up-d`
-4. Запустить приложение:
-* Для MySQL:  
-  `java -jar ./artifacts/aqa-shop.jar -- spring.datasource.url=jdbc:mysql://localhost:3306/app`
-* Для PostgreSQL:  
-  `java -jar ./artifacts/aqa-shop.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/app`
-5. Открыть второй терминал
-6. Запустить тесты в новой вкладке терминала в IDEA:
-* Для MySQL:  
-  `./gradlew clean test -Durl=jdbc:mysql://localhost:3306/app`
-* Для PostgreSQL:  
-  `./gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app`
-7. Создать отчёт Allure  
-   `.\gradlew allureServe`
-8. Выполнить команду для завершения работы allureServe
-   `Ctrl+C`
-9. Перейти в первый терминал
-10. Остановить приложение
-    `Ctrl+C`
-11. Выполнить команду для остановки работы контейнеров 
-    `docker-compose down`
-___
+## Документы
+* [Как правильно работать над дипломом?](https://github.com/Valted-cmd/Diplom/blob/main/files/zadanie.md)
+* [Описание приложения](https://github.com/Valted-cmd/Diplom/blob/main/files/description.md)
+* [Перечень автоматизируемых сценариев](https://github.com/Valted-cmd/Diplom/blob/main/files/Plan.md)
+* [Отчет по итогам тестирования](https://github.com/Valted-cmd/Diplom/blob/main/files/report.md)
+* [Отчет по итогам автоматизированного тестирования](https://github.com/Valted-cmd/Diplom/blob/main/files/summary.md)
 
-## Документация проекта:
-[1. Задание к диплому](https://github.com/Valted-cmd/Diplom/blob/main/files/description.md)  
-[2. План автоматизации](https://github.com/Valted-cmd/Diplom/blob/main/files/plan.md)  
-[3. Отчет по итогам тестирования](https://github.com/Valted-cmd/Diplom/blob/main/files/report.md)  
-[4. Отчет по итогам автоматизации](https://github.com/Valted-cmd/Diplom/blob/main/files/summary.md)  
-[5. Отчет Allure](https://github.com/Valted-cmd/Diplom/blob/main/files/allure.jpg)
+## На локальном компьютере заранее должны быть установлены:
+
+1. IntelliJ IDEA
+2. JDK11
+3. Docker Desktop
+4. Git Bash
+5. Браузер
+
+## Подготовка среды перед тестированием:
+
+**1.** Склонировать в локальный репозиторий [Дипломный проект](https://github.com/Valted-cmd/Diplom.git) и открыть его в IDE IntelliJ IDEA
+
+**2.** Запустить Docker Desktop
+
+**3.** В терминале запустить контейнеры с помощью команды:
+
+    docker-compose up -d
+
+**4.** Запустить целевой веб-сервис командой:
+
+     для mySQL: 
+    java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar
+
+     для postgresgl:
+     java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
+
+# Процедура запуска авто-тестов:
+
+**1.** Во втором терминале запустить тесты:
+
+    для mySQL:
+    ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
+
+    для postgresgl: 
+    ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
+
+**2.** Создать отчёт Allure и открыть в браузере:
+
+    ./gradlew allureServe
+
+# Действия после завершения авто-тестов:
+
+**1.** Для завершения работы allureServe выполнить команду:
+
+    Ctrl+C
+
+**2.** Для остановки работы контейнеров выполнить команду:
+
+    docker-compose down
